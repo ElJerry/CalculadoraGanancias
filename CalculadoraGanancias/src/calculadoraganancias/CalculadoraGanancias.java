@@ -5,6 +5,7 @@
  */
 package calculadoraganancias;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -15,7 +16,9 @@ public class CalculadoraGanancias {
 
     public static void main(String[] args) {
         
-        LectorCSV lector = new LectorCSV();
+        LectorCSV lector = new LectorCSV(new File("C:\\fullOrders.csv"));
+//        LectorCSV lector = new LectorCSV();
+        
         Contenido contenido = lector.getContenido();
         
         // Generar trades

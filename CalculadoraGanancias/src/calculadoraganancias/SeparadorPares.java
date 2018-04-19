@@ -23,7 +23,6 @@ public class SeparadorPares {
         
         for(Trade t : trades){            
             if(!pares.containsKey(t.par)){
-                System.out.println("Cree: " + t.par);
                 pares.put(t.par, new Par(t.par));
             }
             
