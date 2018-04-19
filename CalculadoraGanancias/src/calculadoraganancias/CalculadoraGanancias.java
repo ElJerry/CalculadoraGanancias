@@ -5,6 +5,7 @@
  */
 package calculadoraganancias;
 
+import GUI.PantallaInicial;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -15,25 +16,9 @@ import java.util.ArrayList;
 public class CalculadoraGanancias {
 
     public static void main(String[] args) {
+        PantallaInicial pantalla = new PantallaInicial();
         
-        LectorCSV lector = new LectorCSV(new File("C:\\fullOrders.csv"));
-//        LectorCSV lector = new LectorCSV();
-        
-        Contenido contenido = lector.getContenido();
-        
-        // Generar trades
-        ArrayList<Trade> trades = Trade.generarTrades(contenido);
-        System.out.println("Cantidad de trades: " + trades.size());
-        
-        ArrayList<Par> paresSeparados = SeparadorPares.separarPares(trades);
-        
-        for(Par p : paresSeparados){
-            System.out.println("================" + p.getNombre() + "================");
-            for(Trade t : p.getTrades()){
-                System.out.println(t);
-            }
-        }
-        
+        pantalla.setVisible(true);
     }
     
 }
